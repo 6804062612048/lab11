@@ -11,9 +11,13 @@ int main() {
 	return 0;
 }
 void addRecord(char *addName, int addAge) {
-	FILE *fp;
-	fp=fopen("./lab11/no1/first.txt","a");
-	fprintf(fp,"%s\t%d\n", *addName, addAge);
-	fclose(fp);
+	FILE *fp = fopen("first.txt", "a"); 
+    if (fp == NULL) {
+        printf("Error: Could not open file!");
+        return;
+    }
+    fprintf(fp, "%s %d\n", addName, addAge);
+    fclose(fp);
 }
+
 
